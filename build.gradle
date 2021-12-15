@@ -4,10 +4,6 @@ plugins {
     id 'java'
 }
 
-apply plugin: 'java'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'org.springframework.boot'
-
 group = 'ru.home'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
@@ -39,23 +35,12 @@ test {
     useJUnitPlatform()
 }
 
-//springBoot {
-//    mainClass = 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
-//}
-
-bootJar {
-    manifest {
-        attributes 'Start-Class': 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
-    }
-}
-
-
 
 //project.configurations.implementation.setCanBeResolved(true)
 
-//jar {
-//    manifest {
-//        attributes "Main-Class": "ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
-////        attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")
-//    }
-//}
+jar {
+    manifest {
+        attributes "Main-Class": "ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
+//        attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")
+    }
+}
