@@ -28,6 +28,17 @@ dependencies {
 
     implementation 'org.telegram:telegrambots:5.4.0.1'
     implementation 'org.telegram:telegrambots-spring-boot-starter:5.4.0.1'
+
+    components {
+        withModule('org.springframework:spring-beans') {
+            allVariants {
+                withDependencyConstraints {
+                    // Need to patch constraints because snakeyaml is an optional dependency
+                    it.findAll { it.name == 'snakeyaml' }.each { it.version { strictly '1.19' } }
+                }
+            }
+        }
+    }
 }
 
 project.configurations.implementation.setCanBeResolved(true)
