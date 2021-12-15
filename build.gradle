@@ -37,12 +37,6 @@ test {
 
 project.configurations.implementation.setCanBeResolved(true)
 
-jar {
-    manifest {
-        attributes "Main-Class": "ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
-        attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")
-    }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it)}
-    }
+bootJar {
+    mainClassName = 'com.myproject.config.MySpringBootApplication'
 }
