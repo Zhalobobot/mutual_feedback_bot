@@ -42,4 +42,7 @@ jar {
         attributes "Main-Class": "ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
         attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")
     }
+    from {
+        configurations.compileClasspath.filter { it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
