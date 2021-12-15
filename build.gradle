@@ -43,11 +43,12 @@ test {
 //    mainClass = 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
 //}
 
-bootWar {
+bootJar {
     manifest {
-        attributes 'Main-Class': 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
+        attributes 'Start-Class': 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
     }
 }
+
 
 
 //project.configurations.implementation.setCanBeResolved(true)
