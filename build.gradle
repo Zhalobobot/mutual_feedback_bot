@@ -31,7 +31,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes "Main-Class": "main.java.ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
+        attributes "Main-Class": "src.main.java.ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
         attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")    }
 }
 
