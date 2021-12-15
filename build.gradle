@@ -42,11 +42,10 @@ jar {
         attributes "Main-Class": "ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
         attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")
     }
-}
-
-tasks {
-    val deps by registering(Copy::class) {
-        from(configurations.runtimeClasspath)
-        into("build/deps")
+    tasks {
+        val deps by registering(Copy::class) {
+            from(configurations.runtimeClasspath)
+            into("build/deps")
+        }
     }
 }
