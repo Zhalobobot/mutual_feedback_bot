@@ -17,6 +17,7 @@ project.configurations.implementation.setCanBeResolved(true)
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.6'
+    implementation 'org.springframework.boot:2.5.6'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.5.6'
 
