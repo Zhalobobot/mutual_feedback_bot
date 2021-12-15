@@ -12,11 +12,7 @@ repositories {
     mavenCentral()
 }
 
-jar {
-    manifest {
-        attributes 'Main-Class': configurations.runtimeClasspath.files.collect { MutualFeedbackBotApplication.getName() }.join(' ')
-    }
-}
+project.configurations.implementation.setCanBeResolved(true)
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
@@ -31,6 +27,12 @@ dependencies {
 
     implementation 'org.telegram:telegrambots:5.4.0.1'
     implementation 'org.telegram:telegrambots-spring-boot-starter:5.4.0.1'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "main.java.ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
+        attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")    }
 }
 
 test {
