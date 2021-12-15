@@ -39,9 +39,16 @@ test {
     useJUnitPlatform()
 }
 
-springBoot {
-    mainClass = 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
+//springBoot {
+//    mainClass = 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
+//}
+
+bootWar {
+    manifest {
+        attributes 'Main-Class': 'ru.home.mutual_feedback_bot.MutualFeedbackBotApplication'
+    }
 }
+
 
 //project.configurations.implementation.setCanBeResolved(true)
 
