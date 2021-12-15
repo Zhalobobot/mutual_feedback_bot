@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.1'
+    id 'org.springframework.boot' version '2.6.1 RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -32,7 +32,8 @@ dependencies {
 jar {
     manifest {
         attributes "Main-Class": "ru.home.mutual_feedback_bot.MutualFeedbackBotApplication"
-        attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")    }
+        attributes "Class-Path": configurations.implementation.collect { it.absolutePath }.join(" ")
+    }
 }
 
 test {
